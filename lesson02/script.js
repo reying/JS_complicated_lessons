@@ -1,5 +1,6 @@
 let num = 266219;
 let composition = 1;
+let degreeNum;
 
 let arrayNum = num.toString().split(''); // Преобразование числа в массив цифр
 
@@ -8,5 +9,5 @@ for (let i = 0; i < arrayNum.length; i++) { // Произведение цифр
 }
 console.log('Произведение цифр числа =', composition);
 
-let degreeNum = composition ** 3; // Возведение в степень
-console.log('Первые две цифры полученного числа: ', +degreeNum.toString().substr(0, 2));
+degreeNum = composition ** 3; // Возведение в степень
+console.log('Первые две цифры полученного числа:', +degreeNum.toString().substr(0, 2));

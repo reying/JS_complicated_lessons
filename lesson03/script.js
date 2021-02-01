@@ -1,4 +1,4 @@
-let lang = 'ru';
+let lang = 'en';
 let daysEn = ['Days of the week:',
     'Sunday',
     'Monday',

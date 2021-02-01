@@ -1,0 +1,9 @@
+{
+
+    "esversion": 8,
+    "eqeqeq": true,
+    "latedef": true,
+    "noempty": true,
+    "funcscope": true,
+    "node": true
+}

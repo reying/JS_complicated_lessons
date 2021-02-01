@@ -71,3 +71,8 @@ while (lang !== 'ru' & lang !== 'en') {
     console.log('ОШИБКА: Язык не определен');
     break;
 }
+
+
+let namePerson = 'Дмитрий';
+let positionPerson = namePerson === 'Артем' ? 'диретор' : namePerson === 'Максим' ? 'преподаватель' : 'студент';
+console.log(namePerson, ' - ', positionPerson);

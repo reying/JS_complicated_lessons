@@ -1,5 +1,5 @@
 let lang = 'ru';
-let daysEn = ['Days of the week:',
+let daysEn = [
     'Sunday',
     'Monday',
     'Tuesday',
@@ -8,7 +8,7 @@ let daysEn = ['Days of the week:',
     'Friday',
     'Saturday'
 ];
-let daysRu = ['Дни недели:',
+let daysRu = [
     'Понедельник',
     'Вторник',
     'Среда',
@@ -17,62 +17,47 @@ let daysRu = ['Дни недели:',
     'Суббота',
     'Воскресенье'
 ];
-let arrDays = [
+let resultForIf;
+let resultForSwitch;
+let arrDays = new Map([
     ['ru', daysRu],
     ['en', daysEn],
     ['', 'ОШИБКА: Язык не определен']
-];
+]);
+let namePerson = 'Дмитрий';
+let positionPerson = namePerson === 'Артем' ? 'диретор' : namePerson === 'Максим' ? 'преподаватель' : 'студент';
 
 
 
 // Через if
 if (lang === 'ru') {
-    console.log(daysRu.toString().replaceAll(',', ', ').replace(':,', ':'));
+    resultForIf = daysRu;
 } else if (lang === 'en') {
-    console.log(daysEn.toString().replaceAll(',', ', ').replace(':,', ':'));
+    resultForIf = daysEn;
 } else {
-    console.log('ОШИБКА: Язык не определен');
+    resultForIf = 'ОШИБКА: Язык не определен';
 }
 
 // Через switch-case
 switch (lang) {
     case 'ru':
-        console.log(daysRu.toString().replaceAll(',', ', ').replace(':,', ':'));
+        resultForSwitch = daysRu;
         break;
     case 'en':
-        console.log(daysEn.toString().replaceAll(',', ', ').replace(':,', ':'));
+        resultForSwitch = daysEn;
         break;
     default:
-        console.log('ОШИБКА: Язык не определен');
-}
-
-// Через многомерный массив
-for (let i = 0; lang === arrDays[i][0]; i++) {
-    console.log(arrDays[i][1].toString().replaceAll(',', ', ').replace(':,', ':'));
-}
-for (let i = 1; lang === arrDays[i][0]; i++) {
-    console.log(arrDays[i][1].toString().replaceAll(',', ', ').replace(':,', ':'));
-}
-for (let i = 2; lang === arrDays[i][0];) {
-    console.log(arrDays[i][1]);
-    break;
-}
-
-// Еще способ
-while (lang === 'ru') {
-    console.log(arrDays[0][1].toString().replaceAll(',', ', ').replace(':,', ':'));
-    break;
-}
-while (lang === 'en') {
-    console.log(arrDays[1][1].toString().replaceAll(',', ', ').replace(':,', ':'));
-    break;
-}
-while (lang !== 'ru' & lang !== 'en') {
-    console.log('ОШИБКА: Язык не определен');
-    break;
+        resultForSwitch = 'ОШИБКА: Язык не определен';
 }
 
 
-let namePerson = 'Дмитрий';
-let positionPerson = namePerson === 'Артем' ? 'диретор' : namePerson === 'Максим' ? 'преподаватель' : 'студент';
+
+// Вывод результата решения через if для задачи 1
+console.log(resultForIf);
+// Вывод результата решения через switch для задачи 1
+console.log(resultForSwitch);
+// Вывод результата решения через многомерный массив для задачи 1
+console.log(arrDays.get(lang));
+
+// Вывод результат решения на определение должности для задачи 2
 console.log(namePerson, ' - ', positionPerson);

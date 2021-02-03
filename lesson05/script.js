@@ -10,13 +10,13 @@ for (let i = 0; i < arr.length; i++) {
 }
 
 // Задание 2
-nextHop:
+nextStep:
     for (let i = 1; i < 101; i++) {
         const result = 'Делители этого числа: 1 и ' + i;
-        if (i === 1) { continue nextHop; }
+        if (i === 1) { continue nextStep; }
         for (let j = 2; j < i; j++) {
             if (i % j === 0) {
-                continue nextHop;
+                continue nextStep;
             }
         }
         console.log(result);

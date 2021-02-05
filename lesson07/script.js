@@ -15,7 +15,7 @@ week.forEach(function(item, i, array) {
     if (week[i] === 'Суббота' || week[i] === 'Воскресенье') {
         week[i] = week[i].italics();
     }
-    if (i === nowDate.getDay()) {
+    if (i === nowDate.getDay() - 1) {
         week[i] = week[i].bold();
     }
 });

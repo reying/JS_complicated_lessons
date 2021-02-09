@@ -1,27 +1,20 @@
 'use strict';
 
-// week.forEach(function(item, i, array) {
-//     if (week[i] === 'Суббота' || week[i] === 'Воскресенье') {
-//         week[i] = week[i].italics();
-//     }
-//     if (i === nowDate.getDay() - 1) {
-//         week[i] = week[i].bold();
-//     }
-// });
-
-// console.log(week.join('\r\n'));
-// alert(week.join('\r\n'));
-
-// let elemHtml = document.querySelector('body');
-// elemHtml.innerHTML = week.join('<br>');
-
-const nowDate = new Date();
-
 const upPer = function(value) {
     return value[0].toUpperCase() + value.substring(1);
 };
 
-// Сегодня Вторник, 4 февраля 2020 года, 21 час 5 минут 33 секунды
+const declensionWord = function(word, form1, form2, form3) {
+    let n = Math.abs(word) % 100,
+        n1 = n % 10;
+    if (n > 10 && n < 20) { return form3; }
+    if (n1 > 1 && n1 < 5) { return form2; }
+    if (n1 === 1) { return form1; }
+    return form3;
+};
+
+const nowDate = new Date();
+
 let today = {
     second: nowDate.getSeconds(),
     minute: nowDate.getMinutes(),
@@ -31,14 +24,13 @@ let today = {
     year: nowDate.getFullYear()
 };
 
-
 let formatDateOne = 'Сегодня ' + upPer(today.weekDay) + ', ' +
     today.dayAndMonth + ' ' + today.year + ' года, ' +
-    today.hour + ' часов ' + today.minute + ' минуты ' + today.second + ' секунд';
-console.log(formatDateOne);
+    today.hour + declensionWord(today.hour, ' час ', ' часа ', ' часов ') +
+    today.minute + declensionWord(today.minute, ' минута ', ' минуты ', ' минут ') +
+    today.second + declensionWord(today.second, ' секунда', ' секунды', ' секунд');
 
 let formatDateTow = nowDate.toLocaleDateString() + ' - ' + nowDate.toLocaleTimeString();
-console.log(formatDateTow);
 
 let elemOne = document.querySelector('.first_method');
 let elemTow = document.querySelector('.second_method');

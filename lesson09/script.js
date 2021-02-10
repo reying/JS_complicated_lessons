@@ -49,15 +49,13 @@ const displayingNowDate = function() {
     // const formatDateTow = addNull(today.day) + '.' + addNull(today.month) + '.' + addNull(today.year) + ' - ' +
     //     addNull(today.hour) + ':' + addNull(today.minute) + ':' + addNull(today.second);
 
-
     const elemOne = document.querySelector('.first_method');
     const elemTow = document.querySelector('.second_method');
-    elemOne.innerHTML = formatDateOne;
-    elemTow.innerHTML = formatDateTow;
+    elemOne.textContent = formatDateOne;
+    elemTow.textContent = formatDateTow;
 };
-displayingNowDate();
 
 const rel = function() {
-    window.location.reload();
+    displayingNowDate();
 };
 setInterval(rel, 1000);

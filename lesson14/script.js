@@ -38,7 +38,7 @@ DomElement.prototype.createElem = function() {
 // };
 
 
-let square = new DomElement('.square', {
+let square = new DomElement('#square', {
     height: '100px',
     width: '100px',
     bg: 'black',
@@ -47,7 +47,7 @@ let square = new DomElement('.square', {
 
 document.addEventListener('DOMContentLoaded', square.createElem());
 document.addEventListener('keydown', function(event) {
-    let elem = document.querySelector('.square');
+    let elem = document.querySelector(square.selector);
     if (event.code === 'KeyW') {
         let top = (elem.style.top) ? parseFloat(elem.style.top) : 0;
         elem.style.top = top - 10 + 'px';

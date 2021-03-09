@@ -7,24 +7,56 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-
+        body {
+            padding: 20px;
+        }
+        
+        div {
+            margin-bottom: 10px;
+        }
+        
+        input[type="text"] {
+            width: 120px;
+        }
+        
+        #output {
+            margin-left: 20px;
+        }
+        
+        .vector,
+        .btns {
+            display: inline-block;
+            margin-right: 10px;
+        }
     </style>
 </head>
 
 <body>
+    <div class="currency">
+        <span>Выберите нужную валюту:</span>
+        <input type="radio" name="currency" id="currency-usd" value="USD" checked>
+        <label for="currency-usd">USD</label>
+        <input type="radio" name="currency" id="currency-eur" value="EUR">
+        <label for="currency-eur">EUR</label>
+    </div>
+    <div class="exchange-rates">
+        <input type="text" id="input" placeholder="Укажите кол-во">
+        <label for="input">Доллар США (USD)</label>
+        <input type="text" id="output" disabled>
+        <label for="output">Российский Рубль (RUB)</label>
+    </div>
+    <div class="vector">
+        <select name="vector-exchange" id="vector-exchange">
+            <option value="rub">В рублях</option>
+            <option value="other">В др. валюте</option>
+        </select>
+    </div>
+    <div class="btns">
+        <input type="button" value="Конвертировать" id="exchange">
+    </div>
 
-<select id="cars">
-    <option value="no">Выберите тачку</option>
-    <option value="bmw">bmw</option>
-    <option value="volvo">volvo</option>
-</select>
 
-<div id="output">
-    выбери тачку
-</div>
-
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
